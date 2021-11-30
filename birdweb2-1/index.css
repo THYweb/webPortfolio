@@ -1,0 +1,145 @@
+	    .cardwidth{
+			width:20rem;
+		}
+		.cardmove{
+			position:relative;top:240px;
+			
+		}
+		
+		@media only screen and (max-width:1200px){
+			
+			.cardwidth{
+				width:16rem;
+				
+			}
+			.cardmove{
+				position:relative;top:250px;
+			}
+			main{
+				height:1000px;
+			}
+			
+		}
+		
+		@media only screen and (max-width:1024px){
+			
+			.cardwidth{
+				width:16rem;
+			}
+			.cardmove{
+				position:relative;top:250px;
+				
+			}
+			main{
+				height:1000px;
+			}
+			
+		}
+		
+		
+		
+		@media only screen and (max-width:768px){
+			
+			.cardwidth{
+				width:12rem;
+			}
+			.cardmove{
+				position:relative;top:235px;
+			}
+			main{
+				height:1000px;
+			}
+			
+		}
+        
+		@media only screen and (max-width:540px){
+			
+			.cardwidth{
+				width:14rem;
+			}
+			.cardmove{
+				position:relative;top:5px;
+			}
+			main{
+				height:auto;
+			}
+			
+		} 
+		
+		@media only screen and (max-width:414.5px){
+			
+			.cardwidth{
+				width:12rem;
+			}
+			.cardmove{
+				position:relative;top:5px;
+			}
+			main{
+				height:auto;
+			}
+		}
+        
+		@media only screen and (max-width:411.5px){
+			
+			.cardwidth{
+				width:12rem;
+			}
+			.cardmove{
+				position:relative;top:5px;
+			}
+			main{
+				height:auto;
+			}
+		}
+        
+		@media only screen and (max-width:375.5px){
+			
+			.cardwidth{
+				width:12rem;
+			}
+			.cardmove{
+				position:relative;top:5px;
+			}
+			main{
+				height:auto;
+			}
+		}
+        
+		@media only screen and (max-width:360.5px){
+			
+			.cardwidth{
+				width:12rem;
+			}
+			.cardmove{
+				position:relative;top:5px;
+			}
+			main{
+				height:auto;
+			}
+		}
+        
+		@media only screen and (max-width:320.5px){
+			
+			.cardwidth{
+				width:10rem;
+			}
+			.cardmove{
+				position:relative;top:5px;
+			}
+			main{
+				height:auto;
+			}
+		}
+
+		@media only screen and (max-width:280.5px){
+			
+			.cardwidth{
+				width:10rem;
+			}
+			.cardmove{
+				position:relative;top:5px;
+			}
+			main{
+				height:auto;
+			}
+		}

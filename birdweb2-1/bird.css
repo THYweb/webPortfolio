@@ -1,0 +1,39 @@
+        .divmove{
+			position:relative;top:175px;
+			box-sizing:border-box;
+		}
+		.tableDiv{
+			float:left;
+			height:300px;
+			width:250px;
+			text-align:center;
+			margin-right:22px;
+			margin-left:45px;
+			margin-top:20px;
+			margin-bottom:5px;
+		}
+		.tableDiv .tableinfo{
+			font-family:"微軟正黑體";
+			font-size:20pt;
+		}
+		.tableDiv a{
+			color:blue;
+			text-decoration:none;
+
+		}
+		
+		.tablenavDiv{
+			clear:both;
+			text-align:center;
+			font-family:"Courier New", Courier, monospace;
+			font-size:9pt;
+			padding:10px;
+			
+		}
+		.tablerwd{
+			width: 100%;
+			overflow:auto;
+		}
+		.picDiv{
+			margin-top:40px;
+		}

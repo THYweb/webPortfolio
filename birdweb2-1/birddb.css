@@ -1,0 +1,53 @@
+	    .divmove{
+			position:relative;top:215px;
+		}
+		
+		.divrwd{
+			width:100%;
+			overflow:auto;
+		}
+		
+		.tabledataDiv{
+			margin:5px;	
+		}
+		.tableDiv{
+			float:left;
+			height:600px;
+			width:300px;
+			text-align:center;
+			margin-right:25px;
+			margin-bottom:5px;
+			margin-top:10px;
+			
+		}
+		.tableDiv .tableinfo{
+			font-family:"微軟正黑體";
+			font-size:11pt;
+		}
+		.tableDiv a{
+			color:blue;
+			text-decoration:none;
+		}
+		
+		.tablenavDiv{
+			clear:both;
+			text-align:center;
+			font-family:"Courier New", Courier, monospace;
+			font-size:9pt;
+			padding:5px;
+		}
+		.tabletitleDiv{
+			margin:10px;
+			font-family:"微軟正黑體";
+			font-size:15pt;
+			font-weight:bolder;
+			color:#5B31F5;
+			
+		}
+		.tabletitleColor{
+			margin:5px;
+			font-family:"微軟正黑體";
+			font-size:15pt;
+			font-weight:bold;
+			color:#FA9D69;
+		}
