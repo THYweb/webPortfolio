@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>台電電費計算4</title>
+	<link rel="stylesheet" href="">
+
+	<style>
+
+		.color{border:1px solid green;}
+		.bg{background:#6EEC93;}
+		.text{text-align:center;}
+		.tbcenter{position:relative;left:350px;}
+		.hcenter{position:relative;left:50px;}
+		.tbcenter{position:relative;left:450px;}
+		.hcenter{position:relative;left:450px;}
+
+	</style>
+
+</head>
+<body>
+	
+	<h1 class="hcenter">台電電費計算-住商型簡易時間電價 二段式</h1>
+	<div class="tbcenter">
+
+		<table class="color" cellspacing="0" cellpadding="0">
+
+			<tr>
+				<th class="color bg" colspan="5" >分類</th>
+				<th class="color bg" >夏月<br>(6月1日至9月30日)</th>
+				<th class="color bg" >非夏月<br>(夏月以外時間)</th>
+			</tr>
+
+			<tr>
+				<td class="color bg"rolspan="1">基本電費</td>
+				<td class="color text" colspan="3">按戶計算</td>
+				<td class="color">每戶每月</td>
+				<td class="color text"colspan="2">75.00</td>
+			</tr>
+
+			<tr>
+				<td class="color bg" rowspan="5">流動電費</td>
+
+				<tr>
+					<td class="color text" rowspan="2">周一<br>至<br>周五</td>
+					<td class="color">尖峰時間</td>
+					<td class="color">07:30~22:30</td>
+					<td class="color" rowspan="3">每&emsp;&emsp;度</td>
+					<td class="color text">4.44</td>
+					<td class="color text">4.23</td>
+				</tr>
+
+				<tr>
+					<td class="color">離峰時間</td>
+					<td class="color">00:00~07:30 22:30~24:00</td>
+					<td class="color text">1.80</td>
+					<td class="color text">1.73</td>
+
+				</tr>
+				
+				<tr>
+					<td class="color text">周六、周日<br>及離峰日</td>
+					<td class="color">離峰時間</td>
+					<td class="color text">全 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 日</td>
+					<td class="color text">1.80</td>
+					<td class="color text">1.73</td>
+				</tr>
+				
+				<tr>
+					<td class="color" colspan="3">每月總度數超過2000度之部分</td>
+					<td class="color">每&emsp;&emsp;度</td>
+					<td class="color text" colspan="2">加0.96</td>
+				</tr>
+
+			</tr>
+
+		</table>
+	
+	</div>
+	
+	<script>
+
+			
+		function showAns(){
+
+			var month=document.getElementById("month").value; //讀取月份的值
+			var num1=document.getElementById("num1").value;   //讀取尖峰時間的值
+			var num2=document.getElementById("num2").value;   //讀取離峰時間的值
+			var e=document.getElementById("choice");        //讀取下拉式選單的內容和值
+			var result=document.getElementById("result");   //將結果印在div
+			var strValue=e.options[e.selectedIndex].value;  //讀取下拉式選項的值
+			var strText=e.options[e.selectedIndex].text;    //讀取下拉式選項的內容
+			var sum;
+			var n1=parseInt(num1,10);   //將字串轉成整數
+			var n2=parseInt(num2,10);   //將字串轉成整數
+
+			document.getElementById("result").innerHTML="";
+
+			//result.innerHTML+=month+"月<br>"+"尖峰時間:"+num1+"度<br>"+"離峰時間:"+num2+"度<br>"
+			//+"下拉式選項的編號:"+strValue+"<br>"+"下拉式選項的編號內容:"+strText+"<br>";
+
+			
+
+			switch(month){
+
+				case "6":
+				case "7":
+				case "8":
+				case "9":
+
+
+					
+
+					if(strValue=="1"){
+						
+						if((n1+n2)<2000){
+							sum=75.00+(4.44*n1+1.8*n2);
+							result.innerHTML+=month+"月的電費:"+Math.round(sum)+"元";
+						}else if((n1+n2)>=2000){
+							sum=75.00+(4.44*n1+1.8*n2)+((n1+n2)-2000)*0.96;
+							result.innerHTML+=month+"月的電費:"+Math.round(sum)+"元";
+						}
+					}
+
+					if(strValue=="2"){
+						
+						if((n1+n2)<2000){
+							sum=75.00+(1.8*n2);
+							result.innerHTML+=month+"月的電費:"+Math.round(sum)+"元";
+						}else if((n1+n2)>=2000){
+							sum=75.00+(1.8*n2)+(n2-2000)*0.96;
+							result.innerHTML+=month+"月的電費:"+Math.round(sum)+"元";
+						}
+					}
+
+					if(strValue=="3"){
+						
+						if((n1+n2)<2000){
+							sum=75.00+(4.44*n1);
+							result.innerHTML+=month+"月的電費:"+Math.round(sum)+"元";
+						}else if((n1+n2)>=2000){
+							sum=75.00+(4.44*n1)+(n1-2000)*0.96;
+							result.innerHTML+=month+"月的電費:"+Math.round(sum)+"元";
+						}
+						
+					}
+
+					if(strValue=="4"){
+						
+						if((n1+n2)<2000){
+							sum=75.00+(1.8*n2);
+							result.innerHTML+=month+"月的電費:"+Math.round(sum)+"元";
+						}else if((n1+n2)>=2000){
+							sum=75.00+(1.8*n2)+(n2-2000)*0.96;
+							result.innerHTML+=month+"月的電費:"+Math.round(sum)+"元";
+						}
+					}
+					
+				break;
+
+				case "1":
+				case "2":
+				case "3":
+				case "4":
+				case "5":
+				case "10":
+				case "11":
+				case "12":
+
+					
+
+					if(strValue=="1"){
+						
+						if((n1+n2)<2000){
+							sum=75.00+(4.23*n1+1.73*n2);
+							result.innerHTML+=month+"月的電費:"+Math.round(sum)+"元";
+						}else if((n1+n2)>=2000){
+							sum=75.00+(4.23*n1+1.73*n2)+((n1+n2)-2000)*0.96;
+							result.innerHTML+=month+"月的電費:"+Math.round(sum)+"元";
+						}
+					}
+
+					if(strValue=="2"){
+						
+						if((n1+n2)<2000){
+							sum=75.00+(1.73*n2);
+							result.innerHTML+=month+"月的電費:"+Math.round(sum)+"元";
+						}else if((n1+n2)>=2000){
+							sum=75.00+(1.73*n2)+(n2-2000)*0.96;
+							result.innerHTML+=month+"月的電費:"+Math.round(sum)+"元";
+						}
+					}
+
+					if(strValue=="3"){
+						
+						if((n1+n2)<2000){
+							sum=75.00+(4.23*n1);
+							result.innerHTML+=month+"月的電費:"+Math.round(sum)+"元";
+						}else if((n1+n2)>=2000){
+							sum=75.00+(4.23*n1)+(n1-2000)*0.96;
+							result.innerHTML+=month+"月的電費:"+Math.round(sum)+"元";
+						}
+					}
+
+					if(strValue=="4"){
+						
+						if((n1+n2)<2000){
+							sum=75.00+(1.73*n2);
+							result.innerHTML+=month+"月的電費:"+Math.round(sum)+"元";
+						}else if((n1+n2)>=2000){
+							sum=75.00+(1.73*n2)+(n2-2000)*0.96;
+							result.innerHTML+=month+"月的電費:"+Math.round(sum)+"元";
+						}
+					}
+
+					
+
+				break;
+
+				default:
+					result.innerHTML+="月份輸入錯誤";
+			}
+
+			
+		}
+
+		function showClear(){
+			document.getElementById("month").value="";   //清除input的內容
+			document.getElementById("num1").value="";   //清除input的內容
+			document.getElementById("num2").value="";   //清除input的內容
+			document.getElementById("result").innerHTML=""; //清除div的內容
+			document.getElementById("choice").value="0";  //下拉式選單跳回最上面第0個選項
+		}
+
+	</script>
+
+	<div class="tbcenter">		
+		<h2>輸入度數後，再按下拉式選單</h2>
+		<p>請輸入月份: <input type="text" id="month" maxlength="2"></p>
+		<p>請輸入尖峰時間的度數: <input type="text" id="num1" value="0"></p>
+		<p>請輸入離峰時間的度數: <input type="text" id="num2" value="0"></p><br>
+		<select  id="choice" >
+			<option value="0">選擇以下項目:</option>
+			<option value="1">1.周一至周五，尖峰與離峰時間</option>
+			<option value="2">2.周六、周日及離峰日，離峰時間</option>
+			<option value="3">3.周一至周五，只有尖峰時間</option>
+			<option value="4">4.周一至周五，只有離峰時間</option>
+		</select>
+		<br><br>
+		<button onclick="showAns()">Show Ans</button>
+		<button onclick="showClear()">Clear</button>
+		<div id="result"></div>
+	</div>
+
+</body>
+</html>

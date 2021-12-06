@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+
+	<style>
+		.color{border:1px solid green;}
+		.bg{background:#6EEC93;}
+		.text{text-align:center;}
+		.tbcenter{position:relative;left:350px;}
+		.hcenter{position:relative;left:50px;}
+		.tbcenter{position:relative;left:550px;}
+		.hcenter{position:relative;left:400px;}
+	</style>
+
+</head>
+<body>
+	
+	<h1 class="hcenter">台電電費計算-特高壓電力電價三段式時間電價(尖峰時間固定)</h1>
+	<div class="tbcenter">
+		
+		<table class="color" cellspacing="0" cellpadding="0">
+			
+			<tr>
+				<td class="color text bg" colspan="5">分&emsp;&emsp;類</td>
+				<td class="color text bg">夏月<br>(6月1日至9月30日)</td>
+				<td class="color text bg">非夏月<br>(夏月以外時間)</td>
+			</tr>
+			
+			<tr>
+				<td class="color text bg" rowspan="5">基本電費<br>(每瓩每月)</td>
+				<tr>
+					<td class="td color text" colspan="4">經常契約</td>
+					<td class="td color text">217.30</td>
+					<td class="td color text">160.60</td>
+				</tr>
+				<tr>
+					<td class="color text" colspan="4">半尖峰契約</td>
+					<td class="color text">160.60</td>
+					<td class="color text">160.60</td>
+				</tr>
+				
+				<tr>
+					<td class="color text" colspan="4">周六半尖峰契約</td>
+					<td class="color text">43.40</td>
+					<td class="color text">32.10</td>
+				</tr>
+
+				<tr>
+					<td class="color text" colspan="4">離峰契約</td>
+					<td class="color text">43.40</td>
+					<td class="color text">32.10</td>
+				</tr>
+
+			</tr>
+
+			<tr>
+				<td class="color text bg" rowspan="8">流動電費<br>(每&emsp;度)</td>
+				<tr>
+					<td class="color text" rowspan="4">周一<br>至<br>周五</td>
+					<td class="color text">尖峰<br>時間</td>
+					<td class="color text">夏&emsp;月</td>
+					<td class="color text">10:00~12:00<br>13:00~17:00</td>
+					<td class="color text">4.61</td>
+					<td class="color text">--</td>
+				</tr>
+
+				<tr>
+					<td class="color text" rowspan="2">半尖峰<br>時間</td>
+					<td class="color text">夏&emsp;月</td>
+					<td class="color text">07:30~10:00 <br>12:00~13:00 <br>17:00~22:30</td>
+					<td class="color text">2.87</td>
+					<td class="color text">--</td>
+				</tr>
+
+				<tr>
+					<td class="color text">非夏月</td>
+					<td class="color text">07:30~22:30</td>
+					<td class="color text">--</td>
+					<td class="color text">2.78</td>
+				</tr>
+
+				<tr>
+					<td class="color text">離峰<br>時間</td>
+					<td class="color text" colspan="2">00:00~07:30 <br> 22:30~24:00</td>
+					<td class="color text">1.29</td>
+					<td class="color text">1.22</td>
+				</tr>
+				
+				<tr>
+					<td class="color text" rowspan="2">周&emsp;六</td>
+					<td class="color text">半尖峰<br>時間</td>
+					<td class="color text" colspan="2">07:30~22:30</td>
+					<td class="color text">1.73</td>
+					<td class="color text">1.65</td>
+				</tr>
+				
+				<tr>
+					<td class="color text">離峰<br>時間</td>
+					<td class="color text" colspan="2">00:00~07:30 <br> 22:30~24:00</td>
+					<td class="color text">1.29</td>
+					<td class="color text">1.22</td>
+				</tr>
+				
+				<tr>
+					<td class="color text">周日及<br>離峰日</td>
+					<td class="color text">離峰<br>時間</td>
+					<td class="color text" colspan="2">全&emsp;日</td>
+					<td class="color text">1.29</td>
+					<td class="color text">1.22</td>
+				</tr>
+
+			</tr>
+
+		</table>
+
+	</div>
+	
+	<script>
+
+		function showAns(){
+
+			var wa=document.getElementById("wa").value;       //讀取契約容量的值
+			var month=document.getElementById("month").value; //讀取月份的值
+			var num1=document.getElementById("num1").value;   //讀取尖峰時間的值
+			var num2=document.getElementById("num2").value;   //讀取半尖峰時間的值
+			var num3=document.getElementById("num3").value;   //讀取離峰時間的值
+			var num4=document.getElementById("num4").value;   //讀取週六半尖峰時間的值
+			var num5=document.getElementById("num5").value;   //讀取周六離峰時間的值
+			var result=document.getElementById("result");   //將結果印在div
+			var e=document.getElementById("choice");        //讀取下拉式選單的內容和值
+			var strValue=e.options[e.selectedIndex].value;  //讀取下拉式選項的值
+			var strText=e.options[e.selectedIndex].text;    //讀取下拉式選項的內容
+			var sum;                    //計算價格
+			var wa=parseInt(wa,10);     //將字串轉成整數
+			var n1=parseInt(num1,10);   //將字串轉成整數
+			var n2=parseInt(num2,10);   //將字串轉成整數
+			var n3=parseInt(num3,10);   //將字串轉成整數
+			var n4=parseInt(num4,10);   //將字串轉成整數
+			var n5=parseInt(num5,10);   //將字串轉成整數
+
+			document.getElementById("result").innerHTML=""; //按完後清除之前的資料
+			//result.innerHTML+="契約容量:"+wa+"瓩<br>"+month+"月<br>"+"尖峰時間:"+num1+"度<br>"+"半尖峰時間:"+num2+"度<br>"
+			//+"離峰時間:"+num3+"度<br>"+"周六半尖峰時間:"+num4+"度<br>"+"周六離峰時間:"+num5+"度<br>"+
+			//"下拉式選項的編號:"+strValue+"<br>"+"下拉式選項的編號內容:"+strText+"<br>";
+
+			
+			switch(strValue){
+
+				case "1":
+
+					if(month=="6" || month=="7" || month=="8" || month=="9"){
+
+						sum=217.30*wa+4.61*num1+2.87*num2+1.73*num4+1.29*num5;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+
+				break;
+
+				case "2":
+
+					
+					if(month=="1" || month=="2" || month=="3" || month=="4" || month=="5" || month=="10" || month=="11" || month=="12"){
+						sum=160.60*wa+2.78*num2+1.65*num4+1.22*num5;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+
+				break;
+
+				case "3":
+
+					if(month=="6" || month=="7" || month=="8" || month=="9"){
+
+						sum=160.60*wa+4.61*num1+2.87*num2+1.73*num4+1.29*num5;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+
+				break;
+
+				case "4":
+
+					if(month=="1" || month=="2" || month=="3" || month=="4" || month=="5" || month=="10" || month=="11" || month=="12"){
+
+						sum=160.60*wa+2.78*num2+1.65*num4+1.22*num5;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+
+				break;
+
+				case "5":
+
+					if(month=="6" || month=="7" || month=="8" || month=="9"){
+
+						sum=43.40*wa+4.61*num1+2.87*num2+1.73*num4+1.29*num5;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+
+				break;
+
+				case "6":
+
+					if(month=="1" || month=="2" || month=="3" || month=="4" || month=="5" || month=="10" || month=="11" || month=="12"){
+
+						sum=32.10*wa+2.78*num2+1.65*num4+1.22*num5;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+
+				break;
+
+				case "7":
+
+					if(month=="6" || month=="7" || month=="8" || month=="9"){
+
+						sum=43.40*wa+4.61*num1+2.87*num2+1.73*num4+1.29*num5;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+
+				break;
+
+				case "8":
+
+					if(month=="1" || month=="2" || month=="3" || month=="4" || month=="5" || month=="10" || month=="11" || month=="12"){
+
+						sum=32.10*wa+2.78*num2+1.65*num4+1.22*num5;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+
+				break;
+
+				case "9":
+
+					if(month=="6" || month=="7" || month=="8" || month=="9"){
+
+						sum=217.30*wa+1.29*num3+1.73*num4+1.29*num5;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+				break;
+
+				case "10":
+
+					if(month=="1" || month=="2" || month=="3" || month=="4" || month=="5" || month=="10" || month=="11" || month=="12"){
+
+						sum=160.60*wa+1.22*num3+1.65*num4+1.22*num5;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+
+				break;
+
+				case "11":
+
+					if(month=="6" || month=="7" || month=="8" || month=="9"){
+
+						sum=160.60*wa+1.29*num3+1.73*num4+1.29*num5;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+				break;
+
+				case "12":
+
+					if(month=="1" || month=="2" || month=="3" || month=="4" || month=="5" || month=="10" || month=="11" || month=="12"){
+
+						sum=160.60*wa+1.22*num3+1.65*num4+1.22*num5;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+
+				break;
+
+				case "13":
+
+					if(month=="6" || month=="7" || month=="8" || month=="9"){
+
+						sum=43.40*wa+1.29*num3+1.73*num4+1.29*num5;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+				break;
+
+				case "14":
+
+					if(month=="1" || month=="2" || month=="3" || month=="4" || month=="5" || month=="10" || month=="11" || month=="12"){
+
+						sum=32.10*wa+1.22*num3+1.65*num4+1.22*num5;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+
+				break;
+
+				case "15":
+
+					if(month=="6" || month=="7" || month=="8" || month=="9"){
+
+						sum=43.40*wa+1.29*num3+1.73*num4+1.29*num5;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+				break;
+
+				case "16":
+
+					if(month=="1" || month=="2" || month=="3" || month=="4" || month=="5" || month=="10" || month=="11" || month=="12"){
+
+						sum=32.10*wa+1.22*num3+1.65*num4+1.22*num5;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+				break;
+
+				case "17":
+
+					if(month=="6" || month=="7" || month=="8" || month=="9"){
+
+						sum=217.30*wa+1.29*num3;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+				break;
+
+				case "18":
+
+					if(month=="1" || month=="2" || month=="3" || month=="4" || month=="5" || month=="10" || month=="11" || month=="12"){
+
+						sum=160.60*wa+1.22*num3;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+				break;
+
+				case "19":
+
+					if(month=="6" || month=="7" || month=="8" || month=="9"){
+
+						sum=160.60*wa+1.29*num3;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+				break;
+
+				case "20":
+
+					if(month=="1" || month=="2" || month=="3" || month=="4" || month=="5" || month=="10" || month=="11" || month=="12"){
+
+						sum=160.60*wa+1.22*num3;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+				break;
+
+				case "21":
+
+					if(month=="6" || month=="7" || month=="8" || month=="9"){
+
+						sum=43.40*wa+1.29*num3;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+				break;
+
+				case "22":
+
+					if(month=="1" || month=="2" || month=="3" || month=="4" || month=="5" || month=="10" || month=="11" || month=="12"){
+
+						sum=32.10*wa+1.22*num3;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+				break;
+
+				case "23":
+
+					if(month=="6" || month=="7" || month=="8" || month=="9"){
+
+						sum=43.40*wa+1.29*num3;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+				break;
+
+				case "24":
+
+					if(month=="1" || month=="2" || month=="3" || month=="4" || month=="5" || month=="10" || month=="11" || month=="12"){
+
+						sum=32.10*wa+1.22*num3;
+						result.innerHTML+=month+"月電費:"+Math.round(sum)+"元";
+					}else{
+						result.innerHTML+="月份輸入錯誤";
+					}
+					
+				break;
+
+			}
+
+		}
+		
+		function showInput(){
+
+			var e=document.getElementById("choice");        //讀取下拉式選單的內容和值
+			var strValue=e.options[e.selectedIndex].value;  //讀取下拉式選項的值
+			var strText=e.options[e.selectedIndex].text;    //讀取下拉式選項的內容
+
+			
+			switch(strValue){
+
+				case "1":
+				case "3":
+				case "5":
+				case "7":
+					document.getElementById("num3").disabled=true;
+				break;
+
+				case "2":
+				case "4":
+				case "6":
+				case "8":
+					document.getElementById("num1").disabled=true;
+					document.getElementById("num3").disabled=true;
+				break;
+
+				case "9":
+				case "10":
+				case "11":
+				case "12":
+				case "13":
+				case "14":
+				case "15":
+				case "16":
+					document.getElementById("num1").disabled=true;
+					document.getElementById("num2").disabled=true;
+				break;
+
+				case "17":
+				case "18":
+				case "19":
+				case "20":
+				case "21":
+				case "22":
+				case "23":
+				case "24":
+					document.getElementById("num1").disabled=true;
+					document.getElementById("num2").disabled=true;
+					document.getElementById("num4").disabled=true;
+					document.getElementById("num5").disabled=true;
+				break;
+
+			}
+
+		}
+
+		function showClear(){
+
+			document.getElementById("month").value="";      //清除input的內容
+			document.getElementById("wa").value=0;          //輸入變為0
+			document.getElementById("num1").value=0;        //輸入變為0
+			document.getElementById("num2").value=0;        //輸入變為0
+			document.getElementById("num3").value=0;        //輸入變為0
+			document.getElementById("num4").value=0;        //輸入變為0
+			document.getElementById("num5").value=0;        //輸入變為0
+			document.getElementById("result").innerHTML=""; //清除div的內容
+			document.getElementById("choice").value="0";    //下拉式選單跳回最上面第0個選項
+			document.getElementById("wa").disabled=false;   //設定可以輸入
+			document.getElementById("num1").disabled=false; //設定可以輸入
+			document.getElementById("num2").disabled=false; //設定可以輸入
+			document.getElementById("num3").disabled=false; //設定可以輸入
+			document.getElementById("num4").disabled=false; //設定可以輸入
+			document.getElementById("num5").disabled=false; //設定可以輸入
+		}
+
+	</script>
+
+	<div class="tbcenter">
+
+		<h2>先按下拉式選單，再輸入值</h2>
+
+		<select  id="choice" onclick="showInput()">
+
+			<option value="0">選擇以下項目:</option>
+			<option value="1">1.經常契約，周一至周五尖峰時間(夏月)和半尖峰時間(夏月)和周六半尖峰和離峰時間，夏月(6~9月)</option>
+			<option value="2">2.經常契約，周一至周五尖峰時間(夏月)和半尖峰時間(非夏月)和周六半尖峰和離峰時間，非夏月(非6~9月)</option>
+			<option value="3">3.半尖峰契約，周一至周五尖峰時間(夏月)和半尖峰時間(夏月)和周六半尖峰和離峰時間，夏月(6~9月)</option>
+			<option value="4">4.半尖峰契約，周一至周五尖峰時間(夏月)和半尖峰時間(非夏月)和周六半尖峰和離峰時間，非夏月(非6~9月)</option>
+			<option value="5">5.週六半尖峰契約，周一至周五尖峰時間(夏月)和半尖峰時間(夏月)和周六半尖峰和離峰時間，夏月(6~9月)</option>
+			<option value="6">6.周六半尖峰契約，周一至周五尖峰時間(夏月)和半尖峰時間(非夏月)和周六半尖峰和離峰時間，非夏月(非6~9月)</option>
+			<option value="7">7.離峰契約，周一至周五尖峰時間(夏月)和半尖峰時間(夏月)和周六半尖峰和離峰時間，夏月(6~9月)</option>
+			<option value="8">8.離峰契約，周一至周五尖峰時間(夏月)和半尖峰時間(非夏月)和周六半尖峰和離峰時間，非夏月(非6~9月)</option>
+			<option value="9">9.經常契約，周一至周五離峰時間和周六半尖峰和離峰時間，夏月(6~9月)</option>
+			<option value="10">10.經常契約，周一至周五離峰時間和周六半尖峰和離峰時間，非夏月(6~9月)</option>
+			<option value="11">11.半尖峰契約，周一至周五離峰時間和周六半尖峰和離峰時間，夏月(6~9月)</option>
+			<option value="12">12.半尖峰契約，周一至周五離峰時間和周六半尖峰和離峰時間，非夏月(6~9月)</option>
+			<option value="13">13.周六半尖峰契約，周一至周五離峰時間和周六半尖峰和離峰時間，夏月(6~9月)</option>
+			<option value="14">14.周六半尖峰契約，周一至周五離峰時間和周六半尖峰和離峰時間，非夏月(6~9月)</option>
+			<option value="15">15.離峰契約，周一至周五離峰時間和周六半尖峰和離峰時間，夏月(6~9月)</option>
+			<option value="16">16.離峰契約，周一至周五離峰時間和周六半尖峰和離峰時間，非夏月(6~9月)</option>
+			<option value="17">17.經常契約，周日及離峰日全日，夏月(6~9月)</option>
+			<option value="18">18.經常契約，周日及離峰日全日，非夏月(6~9月)</option>
+			<option value="19">19.半尖峰契約，周日及離峰日全日，夏月(6~9月)</option>
+			<option value="20">20.半尖峰契約，周日及離峰日全日，非夏月(6~9月)</option>
+			<option value="21">21.週六半尖峰契約，周日及離峰日全日，夏月(6~9月)</option>
+			<option value="22">22.週六半尖峰契約，周日及離峰日全日，非夏月(6~9月)</option>
+			<option value="23">23.離峰契約，周日及離峰日全日，夏月(6~9月)</option>
+			<option value="24">24.離峰契約，周日及離峰日全日，非夏月(6~9月)</option>
+
+		</select>		
+
+		
+		<p>請輸入契約容量(瓩): 			<input type="text" id="wa" value="0"></p>
+		<p>請輸入月份(1~12月份): 			<input type="text" id="month" maxlength="2"></p>
+		<p>請輸入尖峰時間的度數: 			<input type="text" id="num1" value="0"></p>
+		<p>請輸入半尖峰時間的度數: 		<input type="text" id="num2" value="0"></p>
+		<p>請輸入離峰時間的度數: 			<input type="text" id="num3" value="0"></p>
+		<p>請輸入週六半尖峰時間的度數: 	<input type="text" id="num4" value="0"></p>
+		<p>請輸入周六離峰時間的度數: 		<input type="text" id="num5" value="0"></p>
+		<button onclick="showAns()">Show Ans</button>
+		<button onclick="showClear()">Clear</button>
+		<div id="result"></div>
+		
+	</div>
+	
+</body>
+</html>
