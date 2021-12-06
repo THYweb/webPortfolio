@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!--jquery CDN-->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--font icon cdn-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="webcss.css">
+	<script src="webjs.js"></script>
+    <title>網站1</title>
+	<!--
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap{
+            width:1280px;
+            height:800px;
+           
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+        
+        .container{
+            display: inline-flex;
+        }
+
+        #box{
+            
+            width:280px;
+            height:800px;
+            background-color:#696969;
+            box-sizing:border-box;
+        }
+
+        #bigpicbox{
+            
+            width:1000px;
+            height:800px;;
+            box-sizing:border-box;
+        }
+
+        #bigimg{
+            box-sizing:border-box; 
+            height:100%;
+            width:100%;
+        }
+
+        .div1{
+            width:280px;
+            height:320px; 
+            background-color:#3B3B3B;
+            margin: 0 auto;
+        }
+
+        #headshot{
+            width:120px;
+            height:120px;
+            display: block;
+            box-sizing:border-box;
+        }
+
+        .divimg{
+            position:relative;top:20px;left:86px;
+        }
+
+        .divimg img{
+            border-radius:50%
+        }
+        .about{
+            color:white;
+            font-size:36px;
+            text-align: center;
+            position: relative;top:20px
+        }
+        .content{
+            color:white;
+            font-size:32px;
+            text-align: center;
+            position: relative;top:30px
+        }
+        .icons{
+            
+           
+            position: relative;top:60px;
+            text-align: center;
+        }
+        #email{
+            color:azure;
+            font-size:24px;
+            letter-spacing:5px;
+        }
+        #twitter{ 
+            color:lightskyblue;
+            font-size:24px;
+            letter-spacing:5px;
+        }
+        #instagram{
+            color:#9D20E8;
+            font-size:24px;
+            letter-spacing:5px;
+        }
+        #facebook-messenger{
+            color:blue;
+            font-size:24px;
+            letter-spacing:5px;
+        }
+        #tumblr{
+            color:plum;
+            font-size:24px;
+            letter-spacing:5px;
+        }
+
+        .div2{
+            width:160px;
+            height:377px;
+            box-sizing:border-box;
+            background-color:#696969;
+        }
+
+        #pictable{
+          
+            border-collapse: collapse; 
+        }
+
+        .divtable{
+            overflow: scroll;
+            width:250px;
+            height: 350px;
+            position: relative;top:13px;left:20px;
+        }
+
+        #img1,#img2,#img3,#img4,#img5,#img6,#img7,#img8,#img9,#img10,#img11,#img12,#img13,#img14,#img15,#img16{
+            width:120px;
+            height:100px;
+            display: block;
+        }
+
+        .div3{
+            background-color:#3B3B3B;
+            width:280px;
+            height:103px;
+            
+        }
+        .div3 p{
+            color: white;
+            text-align: center;
+            position: relative;top:40px;
+            
+        }
+        
+        @media(max-width:1100px) {
+            .wrap{
+                width:1024px;
+                height:800px;
+                /*background-color: black;*/
+                box-sizing: border-box;
+                margin: 0 auto;
+            }
+            .block{
+                position: relative;left:200px;
+            }
+            .container{
+               display: inline-flex;
+            }
+
+            #box{
+                
+                width:200px;
+                height:480px;
+                background-color:#696969;
+                box-sizing:border-box;
+            }
+
+            #bigpicbox{
+                width:600px;
+                height:480px;;
+                box-sizing:border-box;
+            }
+
+            #bigimg{
+                box-sizing:border-box; 
+                height:100%;
+                width:100%;
+            }
+
+            .div1{
+                width:200px;
+                height:200px; 
+                background-color:#3B3B3B;
+                margin: 0 auto;
+            }
+
+            #headshot{
+                width:60px;
+                height:60px;
+                display: block;
+                box-sizing:border-box;
+            }
+
+            .divimg{
+                position:relative;top:10px;left:70px;
+            }
+
+            .divimg img{
+                border-radius:50%
+            }
+            .about{
+                color:white;
+                font-size:32px;
+                text-align: center;
+                position: relative;top:10px
+            }
+            .content{
+                color:white;
+                font-size:20px;
+                text-align: center;
+                position: relative;top:25px
+            }
+            .icons{
+                
+           
+                position: relative;top:46px;
+                text-align: center;
+            }
+            #email{
+                color:azure;
+                font-size:16px;
+                letter-spacing:5px;
+            }
+            #twitter{ 
+                color:lightskyblue;
+                font-size:16px;
+                letter-spacing:5px;
+            }
+            #instagram{
+                color:#9D20E8;
+                font-size:16px;
+                letter-spacing:5px;
+            }
+            #facebook-messenger{
+                color:blue;
+                font-size:16px;
+                letter-spacing:5px;
+            }
+            #tumblr{
+                color:plum;
+                font-size:16px;
+                letter-spacing:5px;
+            }
+
+            .div2{
+                width:200px;
+                height:200px;
+                box-sizing:border-box;
+                background-color:#696969;
+            }
+
+            #pictable{
+             
+                border-collapse: collapse; 
+            }
+
+            .divtable{
+                overflow: scroll;
+                width:160px;
+                height: 170px;
+                position: relative;top:15px;left:22px;
+            }
+
+            #img1,#img2,#img3,#img4,#img5,#img6,#img7,#img8,#img9,#img10,#img11,#img12,#img13,#img14,#img15,#img16{
+                width:80px;
+                height:60px;
+                display: block;
+            }
+
+            .div3{
+                background-color:#3B3B3B;
+                width:200px;
+                height:80px;
+                
+            }
+            .div3 p{
+                color: white;
+                text-align: center;
+                position: relative;top:25px;
+                
+            }
+        }
+
+    </style>
+<script>
+    $(document).ready(function(){
+        $("#box img").click(function(){
+            var n=$(this).attr("id").substr(3);
+            $("#bigimg").attr("src","img/bird"+n+".jpg");
+        });
+
+    });
+</script>
+-->
+</head>
+<body>
+    <div class="wrap">
+
+        <div class="block">
+            
+            <div class="container">
+
+                <div id="bigpicbox">
+                    <img src="img/bird1.jpg" alt="bigimg" id="bigimg">
+                </div>
+        
+                <div id="box">
+    
+                    <div class="div1">
+        
+                        <div class="divimg">
+                            <img src="pic/bird.jpg" alt="大頭照" id="headshot">
+                        </div>
+                        <h1 class="about">鳥類攝影網站</h1>
+                        <p class="content">各種鳥類拍攝</p>
+                        <div class="icons">
+                            <i class="fal fa-envelope-open-text" id="email"></i>
+                            <i class="fab fa-twitter-square" id="twitter"></i>
+                            <i class="fab fa-instagram" id="instagram"></i>
+                            <i class="fab fa-facebook-messenger" id="facebook-messenger"></i>
+                            <i class="fab fa-tumblr-square" id="tumblr"></i>
+                        </div>
+                    </div>
+    
+                    
+    
+                    <div class="div2">
+                        
+                        <div class="divtable">
+    
+                            <table id="pictable"   border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td><img src="img/bird1.jpg" alt="img1" id="img1" title="翠鳥"></td>
+                                    <td><img src="img/bird2.jpg" alt="img2" id="img2"></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/bird3.jpg" alt="img3" id="img3"></td>
+                                    <td><img src="img/bird4.jpg" alt="img4" id="img4"></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/bird5.jpg" alt="img5" id="img5"></td>
+                                    <td><img src="img/bird6.jpg" alt="img6" id="img6"></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/bird7.jpg" alt="img7" id="img7"></td>
+                                    <td><img src="img/bird8.jpg" alt="img8" id="img8"></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/bird9.jpg" alt="img9" id="img9"></td>
+                                    <td><img src="img/bird10.jpg" alt="img10" id="img10"></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/bird11.jpg" alt="img11" id="img11"></td>
+                                    <td><img src="img/bird12.jpg" alt="img12" id="img12"></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/bird13.jpg" alt="img13" id="img13"></td>
+                                    <td><img src="img/bird14.jpg" alt="img14" id="img14"></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/bird15.jpg" alt="img15" id="img15"></td>
+                                    <td><img src="img/bird16.jpg" alt="img16" id="img16"></td>
+                                </tr>
+                            </table>
+    
+                        </div>
+                        
+                        
+                    </div>
+    
+                    
+    
+                    <div class="div3">
+                        <p >&copy; Copyright 2021 Author:TangHongYuan</p>
+                    </div>
+    
+                </div>
+                
+            </div>
+            
+            
+            
+        </div>
+
+    </div>
+    
+    
+
+
+</body>
+
+</html>
