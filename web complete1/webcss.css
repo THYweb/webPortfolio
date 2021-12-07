@@ -1,0 +1,281 @@
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap{
+            width:1280px;
+            height:800px;
+            /*background-color:black;*/
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+        
+        .container{
+            display: inline-flex;
+        }
+
+        #box{
+            
+            width:280px;
+            height:800px;
+            background-color:#696969;
+            box-sizing:border-box;
+        }
+
+        #bigpicbox{
+            /*background-color: aliceblue;*/
+            width:1000px;
+            height:800px;;
+            box-sizing:border-box;
+        }
+
+        #bigimg{
+            box-sizing:border-box; 
+            height:100%;
+            width:100%;
+        }
+
+        .div1{
+            width:280px;
+            height:320px; 
+            background-color:#3B3B3B;
+            margin: 0 auto;
+        }
+
+        #headshot{
+            width:120px;
+            height:120px;
+            display: block;
+            box-sizing:border-box;
+        }
+
+        .divimg{
+            position:relative;top:20px;left:86px;
+        }
+
+        .divimg img{
+            border-radius:50%
+        }
+        .about{
+            color:white;
+            font-size:36px;
+            text-align: center;
+            position: relative;top:20px
+        }
+        .content{
+            color:white;
+            font-size:32px;
+            text-align: center;
+            position: relative;top:30px
+        }
+        .icons{
+            
+            /*background-color: pink;*/
+            position: relative;top:60px;
+            text-align: center;
+        }
+        #email{
+            color:azure;
+            font-size:24px;
+            letter-spacing:5px;
+        }
+        #twitter{ 
+            color:lightskyblue;
+            font-size:24px;
+            letter-spacing:5px;
+        }
+        #instagram{
+            color:#9D20E8;
+            font-size:24px;
+            letter-spacing:5px;
+        }
+        #facebook-messenger{
+            color:blue;
+            font-size:24px;
+            letter-spacing:5px;
+        }
+        #tumblr{
+            color:plum;
+            font-size:24px;
+            letter-spacing:5px;
+        }
+
+        .div2{
+            width:160px;
+            height:377px;
+            box-sizing:border-box;
+            background-color:#696969;
+        }
+
+        #pictable{
+            /*background-color:pink;*/
+            border-collapse: collapse; 
+        }
+
+        .divtable{
+            overflow: scroll;
+            width:250px;
+            height: 350px;
+            position: relative;top:13px;left:20px;
+        }
+
+        #img1,#img2,#img3,#img4,#img5,#img6,#img7,#img8,#img9,#img10,#img11,#img12,#img13,#img14,#img15,#img16{
+            width:120px;
+            height:100px;
+            display: block;
+        }
+
+        .div3{
+            background-color:#3B3B3B;
+            width:280px;
+            height:103px;
+            
+        }
+        .div3 p{
+            color: white;
+            text-align: center;
+            position: relative;top:40px;
+            
+        }
+        
+        @media(max-width:1100px) {
+            .wrap{
+                width:1024px;
+                height:800px;
+                /*background-color: black;*/
+                box-sizing: border-box;
+                margin: 0 auto;
+            }
+            .block{
+                position: relative;left:200px;
+            }
+            .container{
+               display: inline-flex;
+            }
+
+            #box{
+                
+                width:200px;
+                height:480px;
+                background-color:#696969;
+                box-sizing:border-box;
+            }
+
+            #bigpicbox{
+                /*background-color: aliceblue;*/
+                width:600px;
+                height:480px;;
+                box-sizing:border-box;
+            }
+
+            #bigimg{
+                box-sizing:border-box; 
+                height:100%;
+                width:100%;
+            }
+
+            .div1{
+                width:200px;
+                height:200px; 
+                background-color:#3B3B3B;
+                margin: 0 auto;
+            }
+
+            #headshot{
+                width:60px;
+                height:60px;
+                display: block;
+                box-sizing:border-box;
+            }
+
+            .divimg{
+                position:relative;top:10px;left:70px;
+            }
+
+            .divimg img{
+                border-radius:50%
+            }
+            .about{
+                color:white;
+                font-size:32px;
+                text-align: center;
+                position: relative;top:10px
+            }
+            .content{
+                color:white;
+                font-size:20px;
+                text-align: center;
+                position: relative;top:25px
+            }
+            .icons{
+                
+                /*background-color: pink;*/
+                position: relative;top:46px;
+                text-align: center;
+            }
+            #email{
+                color:azure;
+                font-size:16px;
+                letter-spacing:5px;
+            }
+            #twitter{ 
+                color:lightskyblue;
+                font-size:16px;
+                letter-spacing:5px;
+            }
+            #instagram{
+                color:#9D20E8;
+                font-size:16px;
+                letter-spacing:5px;
+            }
+            #facebook-messenger{
+                color:blue;
+                font-size:16px;
+                letter-spacing:5px;
+            }
+            #tumblr{
+                color:plum;
+                font-size:16px;
+                letter-spacing:5px;
+            }
+
+            .div2{
+                width:200px;
+                height:200px;
+                box-sizing:border-box;
+                background-color:#696969;
+            }
+
+            #pictable{
+                /*background-color:pink;*/
+                border-collapse: collapse; 
+            }
+
+            .divtable{
+                overflow: scroll;
+                width:160px;
+                height: 170px;
+                position: relative;top:15px;left:22px;
+            }
+
+            #img1,#img2,#img3,#img4,#img5,#img6,#img7,#img8,#img9,#img10,#img11,#img12,#img13,#img14,#img15,#img16{
+                width:80px;
+                height:60px;
+                display: block;
+            }
+
+            .div3{
+                background-color:#3B3B3B;
+                width:200px;
+                height:80px;
+                
+            }
+            .div3 p{
+                color: white;
+                text-align: center;
+                position: relative;top:25px;
+                
+            }
+        }
