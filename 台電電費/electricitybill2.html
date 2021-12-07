@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>台電電費計算2</title>
+	<link rel="stylesheet" href="">
+
+	<style>
+
+		.color{border:1px solid green;}
+		.bg{background:#6EEC93;}
+		.text{text-align:center;}
+		.tbcenter{position:relative;left:500px;}
+		.hcenter{position:relative;left:480px;}
+
+	</style>
+
+</head>
+
+<body>
+
+	<h1 class="hcenter">台電電費計算-表燈電價非時間電價</h1>
+	<div class="tbcenter">
+		
+		<table cellspacing="0" cellpadding="0" class="color">
+			
+			<tr>
+				<th class="color bg" colspan="3">每月電費電度數分段</th>
+				<th class="color bg">夏月<br>(6月1日至9月31)</th>
+				<th class="color bg">非夏月<br>(夏月以外時間)</th>
+			</tr>
+			
+			<tr>
+				<td class="color bg" rowspan="6">非營業用</td>
+				<td class="color">120度以下部分</td>
+				<td class="color" rowspan="6">每度</td>
+				<td class="color text">1.63</td>
+				<td class="color text">1.63</td>
+			</tr>
+			
+			<tr>
+				<td class="color text">121~330度部分</td>
+				<td class="color text">2.38</td>
+				<td class="color text">2.10</td>
+			</tr>
+
+			<tr>
+				<td class="color text">331~500度部分</td>
+				<td class="color text">3.52</td>
+				<td class="color text">2.89</td>
+			</tr>
+			
+			<tr>
+				<td class="color text">501~700度部分</td>
+				<td class="color text">4.80</td>
+				<td class="color text">3.94</td>
+			</tr>
+			
+			<tr>
+				<td class="color text">701~1000度部分</td>
+				<td class="color text">5.66</td>
+				<td class="color text">4.60</td>
+			</tr>
+
+			<tr>
+				<td class="color text">1001度以上部分</td>
+				<td class="color text">6.41</td>
+				<td class="color text">5.03</td>
+			</tr>
+
+		</table>
+
+	</div>
+	<script>
+		
+		
+
+		function showAns(){
+
+			var month=document.getElementById("month").value;
+			var num=document.getElementById("num").value;
+			var show=document.getElementById("Show");
+			var sum;
+			show.innerHTML+=month+"月份<br>"+num+"度<br>";
+
+			document.getElementById("show").innerHTML="";
+			
+			switch(month){
+
+				case "6":
+				case "7":
+				case "8":
+				case "9":
+
+				    if(num<120){
+				    	sum=num*1.63;
+				    	show.innerHTML+=month+"月份的電費:"+Math.round(sum)+"元";
+				    }else if(num>=120 && num<330){
+				    	sum=1.63*120+2.38*(num-120);
+				    	show.innerHTML+=month+"月份的電費:"+Math.round(sum)+"元";
+				    }else if(num>=330 && num<500){
+				    	sum=1.63*120+2.38*(330-120)+3.52*(num-330);
+				    	show.innerHTML+=month+"月份的電費:"+Math.round(sum)+"元";
+				    }else if(num>=500 && num<700){
+				    	sum=1.63*120+2.38*(330-120)+3.52*(500-330)+4.80*(num-500);
+				    	show.innerHTML+=month+"月份的電費:"+Math.round(sum)+"元";
+				    }else if(num>=700 && num<1000){
+						sum=1.63*120+2.38*(330-120)+3.52*(500-330)+4.80*(700-500)+5.66*(num-700);
+						show.innerHTML+=month+"月份的電費:"+Math.round(sum)+"元";
+					}else if(num>=1000){
+						sum=1.63*120+2.38*(330-120)+3.52*(500-330)+4.80*(700-500)+5.66*(1000-700)+6.41*(num-1000);
+						show.innerHTML+=month+"月份的電費:"+Math.round(sum)+"元";
+				    }
+
+				break;
+
+				
+				case "1":
+				case "2":
+				case "3":
+				case "4":
+				case "5":
+				case "10":
+				case "11":
+				case "12":
+
+					if(num<120){
+				    	sum=num*1.63;
+				    	show.innerHTML+=month+"月份的電費:"+Math.round(sum)+"元";
+				    }else if(num>=120 && num<330){
+				    	sum=1.63*120+2.10*(num-120);
+				    	show.innerHTML+=month+"月份的電費:"+Math.round(sum)+"元";
+				    }else if(num>=330 && num<500){
+				    	sum=1.63*120+2.10*(330-120)+2.89*(num-330);
+				    	show.innerHTML+=month+"月份的電費:"+Math.round(sum)+"元";
+				    }else if(num>=500 && num<700){
+				    	sum=1.63*120+2.10*(330-120)+2.89*(500-330)+3.94*(num-500);
+				    	show.innerHTML+=month+"月份的電費:"+Math.round(sum)+"元";
+				    }else if(num>=700 && num<1000){
+						sum=1.63*120+2.10*(330-120)+2.89*(500-330)+3.94*(700-500)+4.60*(num-700);
+						show.innerHTML+=month+"月份的電費:"+Math.round(sum)+"元";
+					}else if(num>=1000){
+						sum=1.63*120+2.10*(330-120)+2.89*(500-330)+3.94*(700-500)+4.60*(1000-700)+5.03*(num-1000);
+						show.innerHTML+=month+"月份的電費:"+Math.round(sum)+"元";
+				    }
+
+				break;
+
+				default:
+					show.innerHTML+="月份輸入錯誤!";
+
+			}
+
+		}
+
+		function showClear(){
+			document.getElementById("month").value="";
+			document.getElementById("num").value="";
+			document.getElementById("Show").innerHTML="";
+		}
+
+	</script>
+	
+	<br>
+
+	<div class="tbcenter">
+		<div>請輸入月份(1~12):</div><input type="text" id="month" maxlength="2">
+		<div>請輸入度數:</div><input type="text" id="num"><br><br>
+		<input type="button" value="Show Ans" onclick="showAns()">
+		<input type="button" value="Clear" onclick="showClear()">
+		<div id="Show"></div>
+	</div>
+
+</body>
+</html>
