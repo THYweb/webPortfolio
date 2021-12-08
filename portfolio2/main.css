@@ -1,0 +1,337 @@
+		body{
+		    font-family: -apple-system,BlinkMacSystemFont,"Microsoft JhengHei","Roboto","Helvetica Neue", Arial, sans-serif,"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+				
+		}
+		
+		header{
+		    background:#7DB45F; 
+			height:80px;
+			box-sizing:border-box;
+		}
+		
+		
+		
+		.logo{
+			background:url('portfoliopic/logo.png'); 
+			width:100px;height:80px;
+		}
+		  
+		.headertitle{
+			font-size:32px;
+			width:330px;
+			color:white;
+			position:relative;left:590px;bottom:70px;
+			
+		}
+		
+		main{
+			height:1280px;
+			box-sizing:border-box;
+		}
+		
+		
+		.carousel-control-prev-icon{
+			background-color:black;
+		}
+		
+		.carousel-control-next-icon{
+			background-color:black;
+		}
+		
+		.carouselMove{
+		   position:relative;top:180px;
+		   
+		}
+		
+		.paginationMove{
+			position:relative;top:230px;
+			
+		}
+		  
+		
+		.page-item{
+			position:relative;left:385px;
+			font-size:24px;
+			
+		}
+		  
+		footer{
+			background:#7DB45F;
+			height:75px;
+			box-sizing:border-box;
+		}
+		  
+		footer div{
+			font-size:28px;
+		}
+		  
+		.footerpMove{
+			position:relative;top:17px;left:680px;
+			color:white;
+			width:170px;
+			
+		}	
+
+		
+		
+		@media only screen and (max-width:1024.5px){
+			
+			.headertitle{
+				font-size:28px;
+				width:290px;
+				color:white;
+				position:relative;left:360px;bottom:60px;
+			}
+			.carouselMove{
+			   position:relative;top:280px;
+			}
+			
+			.paginationMove{
+				position:relative;top:330px;
+			}
+			.page-item{
+				position:relative;left:320px;
+				font-size:18px;
+				
+			}
+			footer div{
+				font-size:26px;
+			}
+			.footerpMove{
+				position:relative;top:18px;left:440px;
+				color:white;
+				width:160px;
+				
+			}
+			
+		}
+		
+		
+		
+		@media only screen and (max-width:768.5px){
+			
+			.headertitle{
+				font-size:28px;
+				width:300px;
+				color:white;
+				position:relative;left:240px;bottom:58px;
+			}
+			.carouselMove{
+			   position:relative;top:360px;
+			}
+			
+			.paginationMove{
+				position:relative;top:410px;
+			}
+			.page-item{
+				position:relative;left:190px;
+				font-size:16px;
+				
+			}
+			footer div{
+				font-size:26px;
+			}
+			.footerpMove{
+				position:relative;top:17px;left:320px;
+				color:white;
+				width:160px;
+			}	
+			
+		}
+		
+		@media only screen and (max-width:540.5px){
+			
+			.headertitle{
+				display:none;
+			}
+			.carouselMove{
+			   position:relative;top:400px;
+			}
+			
+			.paginationMove{
+				position:relative;top:450px;
+			}
+			.page-item{
+				position:relative;left:120px;
+				font-size:14px;
+				
+			}
+			footer div{
+				font-size:20px;
+			}
+			.footerpMove{
+				position:relative;top:21px;left:220px;
+				color:white;
+				width:120px;
+			}	
+			
+		}
+		
+		@media only screen and (max-width:414.5px){
+			
+			.headertitle{
+				display:none;
+			}
+			.carouselMove{
+			   position:relative;top:450px;
+			}
+			
+			.paginationMove{
+				position:relative;top:500px;
+			}
+			.page-item{
+				position:relative;left:55px;
+				font-size:14px;
+				
+			}
+			footer div{
+				font-size:20px;
+			}
+			.footerpMove{
+				position:relative;top:23px;left:150px;
+				color:white;
+				width:120px;
+			}	
+			
+		}
+		@media only screen and (max-width:411.5px){
+			
+			.headertitle{
+				display:none;
+			}
+			.carouselMove{
+			   position:relative;top:450px;
+			}
+			
+			.paginationMove{
+				position:relative;top:500px;
+			}
+			.page-item{
+				position:relative;left:60px;
+				font-size:12px;
+				
+			}
+			footer div{
+				font-size:20px;
+			}
+			.footerpMove{
+				position:relative;top:23px;left:150px;
+				color:white;
+				width:120px;
+			}	
+			
+		}
+		
+		@media only screen and (max-width:375.5px){
+			
+			.headertitle{
+				display:none;
+			}
+			.carouselMove{
+			   position:relative;top:480px;
+			}
+			
+			.paginationMove{
+				position:relative;top:530px;
+			}
+			.page-item{
+				position:relative;left:37px;
+				font-size:12px;
+				
+			}
+			footer div{
+				font-size:20px;
+			}
+			.footerpMove{
+				position:relative;top:23px;left:135px;
+				color:white;
+				width:120px;
+			}	
+			
+		}
+		
+		@media only screen and (max-width:360.5px){
+			
+			.headertitle{
+				display:none;
+			}
+			.carouselMove{
+			   position:relative;top:480px;
+			}
+			
+			.paginationMove{
+				position:relative;top:530px;
+			}
+			.page-item{
+				position:relative;left:30px;
+				font-size:12px;
+				
+			}
+			footer div{
+				font-size:20px;
+			}
+			.footerpMove{
+				position:relative;top:23px;left:128px;
+				color:white;
+				width:120px;
+			}	
+			
+		}
+		
+		@media only screen and (max-width:320.5px){
+			
+			.headertitle{
+				display:none;
+			}
+			.carouselMove{
+			   position:relative;top:500px;
+			}
+			
+			.paginationMove{
+				position:relative;top:550px;
+			}
+			.page-item{
+				position:relative;left:25px;
+				font-size:10px;
+				width:30px;
+				
+			}
+			footer div{
+				font-size:20px;
+			}
+			.footerpMove{
+				position:relative;top:21px;left:102px;
+				color:white;
+				
+			}	
+			
+		}
+		
+		@media only screen and (max-width:280.5px){
+			
+			.headertitle{
+				display:none;
+			}
+			.carouselMove{
+			   position:relative;top:520px;
+			}
+			
+			.paginationMove{
+				position:relative;top:570px;
+			}
+			.page-item{
+				position:relative;left:11px;
+				font-size:8px;
+				width:28px;
+				
+			}
+			footer div{
+				font-size:20px;
+			}
+			.footerpMove{
+				position:relative;top:23px;left:85px;
+				color:white;
+				
+			}	
+			
+		}
