@@ -1,0 +1,152 @@
+	    ul{
+			list-style-type:none;
+		}
+		
+		.movepage2{
+			position:relative;top:240px;
+			box-sizing:border-box;
+		}
+		
+		.hfontsize2{
+			color:blue;
+			position:relative;right:1px;
+		}
+		
+		.pfontsize2{
+			font-size:18px;
+		}
+		
+		.ulmove2{
+			position:relative;right:40px;
+		}
+		
+		ul li{
+			font-size:18px;
+		}
+		
+		@media only screen and (max-width:1024px){
+			
+			.movepage2{
+				position:relative;top:210px;
+			}
+			
+		}
+
+		@media only screen and (max-width:768px){
+			
+			.movepage2{
+				position:relative;top:200px;
+			}
+			
+		}
+
+		@media only screen and (max-width:540px){
+			
+			.movepage2{
+				position:relative;top:215px;
+			}
+			
+		} 
+		
+		@media only screen and (max-width:414.5px){
+		
+			.movepage2{
+				position:relative;top:190px;
+			}
+			
+		}
+
+		@media only screen and (max-width:411.5px){
+			
+			.movepage2{
+				position:relative;top:240px;
+			}
+			.hfontsize2{
+				font-size:24px;
+			}
+			
+			.pfontsize2{
+				font-size:16px;
+			}
+			
+			ul li{
+				font-size:16px;
+			}
+			
+		}
+
+		@media only screen and (max-width:375.5px){
+			
+			.movepage2{
+				position:relative;top:230px;
+			}
+			.hfontsize2{
+				font-size:24px;
+			}
+			
+			.pfontsize2{
+				font-size:16px;
+			}
+			
+			ul li{
+				font-size:16px;
+			}
+			
+		}
+
+		@media only screen and (max-width:360.5px){
+			
+			.movepage2{
+				position:relative;top:230px;
+			}
+			.hfontsize2{
+				font-size:24px;
+			}
+			
+			.pfontsize2{
+				font-size:16px;
+			}
+			
+			ul li{
+				font-size:16px;
+			}
+			
+		}
+
+		@media only screen and (max-width:320.5px){
+			
+			.movepage2{
+				position:relative;top:220px;
+			}
+			.hfontsize2{
+				font-size:24px;
+			}
+			
+			.pfontsize2{
+				font-size:16px;
+			}
+			
+			ul li{
+				font-size:16px;
+			}
+			
+		}
+
+		@media only screen and (max-width:280.5px){
+			
+			.movepage2{
+				position:relative;top:230px;
+			}
+			.hfontsize2{
+				font-size:24px;
+			}
+			
+			.pfontsize2{
+				font-size:14px;
+			}
+			
+			ul li{
+				font-size:14px;
+			}
+			
+		} 	
