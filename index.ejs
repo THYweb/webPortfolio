@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student information</title>
+	<style>
+		table{
+			border-collapse:collapse;
+			width:50%;
+		}
+		th,td{
+			padding:8px;
+			text-align:left;
+			border-bottom:1px solid #ddd;
+		}
+		tr:nth-child(odd){
+			background-color:#f2f2f2;
+		}
+		#hh1{
+			background-color:yellow;
+			color:blue;
+			width:50%;
+			text-align:center;
+		}
+		#hh2{
+			background-color:blue;
+			color:white;
+			width:50%;
+			text-align:center;
+		}
+		#tr1{
+			background-color:blue;
+			color:white;
+		}
+		#btn2{
+			width:150px;
+			font-size:20px;
+		}
+		.btns{
+			width:100px;
+		}
+		.tds{
+			width:210px;
+		}
+	</style>
+	<script>
+		//程式碼最重要部分
+		function Search(){
+			var tid=document.getElementsByName('tid')[0].value;
+			window.location.href="/?sid="+tid;
+		}
+		
+	</script>
+</head>
+<body>
+    <h1 id="hh1">Student information</h1>
+	<h2 id="hh2"><%= title %></h2>
+	<div>
+		<label>Enter Student SID:</label>
+		<input type="text" name="tid" value="" placeholder="input student SID">
+		<input type="button" name="ssearch" value="Search" onclick="Search()">
+	</div>
+	
+	<br>
+	
+	<div>
+		<h3>
+			Append a student information
+			<input id="btn2" type="button" value="Append" onclick="javascript:location.href='add'">
+		</h3>
+	</div>
+	
+	<br>
+	
+	<table>
+		<tr id="tr1">
+			<th>SID</th>
+			<th>NAME</th>
+			<th>AGE</th>
+			<th class="tds">Operation</th>
+		</tr>
+		<% for(var i=0;i<data.length;i++){%>
+			<tr>
+				<td><%= data[i].sid %></td>
+				<td><%= data[i].name %></td>
+				<td><%= data[i].age %></td>
+				<td class="tds">
+					<input type="button" name="edit" class="btns" value="Edit" onclick="javascript:location.href='edit?sid=<%=data[i].sid%>'">
+					<input type="button" name="del" class="btns" value="Delete" onclick="javascript:location.href='del?sid=<%=data[i].sid%>'">
+				</td>
+			</tr>
+		<%}%>
+	</table>
+	
+</body>
+</html>

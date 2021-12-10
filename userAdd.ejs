@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Append a student Data</title>
+	<style>
+		.hrs{
+			width:50%;
+			float:left;
+		}
+	</style>
+	<script>
+		//程式碼最重要部分
+		function Check(){
+			var ss_id=document.getElementsById("ss_id").value;
+			var ss_name=document.getElementsById("ss_name").value;
+			var ss_age=document.getElementsById("ss_age").value;
+			if(ss_id && ss_name&&ss_age){
+				return true;
+			}
+			alert("Some Datas are not input");
+			return false;
+		}
+		
+	</script>
+</head>
+<body>
+	
+	<h1><%=title%></h1>
+	<form name="addform" action="userAdd" method="post" accept-charset="utf-8" onsubmit="return Check();">
+		<hr class="hrs"><br>
+		<table>
+			<tr>
+				<td><label>Student ID </label></td>
+				<td><input id="ss_id" name="s_id" type="text" placeholder="Student ID"></td>
+			</tr>
+			<tr>
+				<td><label>Name </label></td>
+				<td><input id="ss_name" name="s_name" type="text"></td>
+			</tr>
+			<tr>
+				<td><label>AGE</label></td>
+				<td><input id="ss_age" name="s_age" type="text"></td>
+			</tr>
+		</table>
+		<hr class="hrs"><br>
+		<input type="submit" value="Append">
+		<input type="reset" value="Reset">
+		<input type="button" value="BACK" onclick="javascript: location.href='/'">
+
+	</form>
+</body>
+</html>
